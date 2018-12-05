@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1820637921B7D78C00BEEF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1820637821B7D78C00BEEF8F /* AppDelegate.swift */; };
 		1820637B21B7D78C00BEEF8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1820637A21B7D78C00BEEF8F /* ViewController.swift */; };
-		1820637E21B7D78C00BEEF8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1820637C21B7D78C00BEEF8F /* Main.storyboard */; };
 		1820638021B7D79300BEEF8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1820637F21B7D79300BEEF8F /* Assets.xcassets */; };
 		1820638321B7D79300BEEF8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1820638121B7D79300BEEF8F /* LaunchScreen.storyboard */; };
 		1820638E21B7D79400BEEF8F /* MatchResumeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1820638D21B7D79400BEEF8F /* MatchResumeTests.swift */; };
@@ -19,6 +18,7 @@
 		182063AF21B7E50F00BEEF8F /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182063AE21B7E50F00BEEF8F /* GenericTableViewController.swift */; };
 		182063B121B7E5C500BEEF8F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182063B021B7E5C500BEEF8F /* Service.swift */; };
 		182063B321B7E7CA00BEEF8F /* MatchPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182063B221B7E7CA00BEEF8F /* MatchPlayerEvent.swift */; };
+		1875BACA21B8622600045BF8 /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BAC921B8622600045BF8 /* ResumeViewController.swift */; };
 		2108FFC685D98A50D777B381 /* Pods_MatchResumeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153BD33F7E1F5CF104C786E3 /* Pods_MatchResumeUITests.framework */; };
 		2ED85669589EB6A3EEF219EB /* Pods_MatchResumeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB9594940B72476AA62E944 /* Pods_MatchResumeTests.framework */; };
 		F988C3EB8D0CFE60E79F557B /* Pods_MatchResume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0BA8E81ED23AE5E52284FA /* Pods_MatchResume.framework */; };
@@ -46,7 +46,6 @@
 		1820637521B7D78C00BEEF8F /* MatchResume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchResume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1820637821B7D78C00BEEF8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1820637A21B7D78C00BEEF8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1820637D21B7D78C00BEEF8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1820637F21B7D79300BEEF8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1820638221B7D79300BEEF8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1820638421B7D79300BEEF8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		182063AE21B7E50F00BEEF8F /* GenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
 		182063B021B7E5C500BEEF8F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		182063B221B7E7CA00BEEF8F /* MatchPlayerEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPlayerEvent.swift; sourceTree = "<group>"; };
+		1875BAC921B8622600045BF8 /* ResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
 		76B0EDAF3A181D836DD6D94D /* Pods-MatchResume.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchResume.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatchResume/Pods-MatchResume.release.xcconfig"; sourceTree = "<group>"; };
 		7B3F28CC1F045BB68898AC92 /* Pods-MatchResume.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchResume.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MatchResume/Pods-MatchResume.debug.xcconfig"; sourceTree = "<group>"; };
 		7FB9594940B72476AA62E944 /* Pods_MatchResumeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchResumeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,7 +130,6 @@
 				182063A621B7D87400BEEF8F /* Views */,
 				1820637821B7D78C00BEEF8F /* AppDelegate.swift */,
 				1820637A21B7D78C00BEEF8F /* ViewController.swift */,
-				1820637C21B7D78C00BEEF8F /* Main.storyboard */,
 				1820637F21B7D79300BEEF8F /* Assets.xcassets */,
 				1820638121B7D79300BEEF8F /* LaunchScreen.storyboard */,
 				1820638421B7D79300BEEF8F /* Info.plist */,
@@ -177,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				182063AE21B7E50F00BEEF8F /* GenericTableViewController.swift */,
+				1875BAC921B8622600045BF8 /* ResumeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -322,7 +322,6 @@
 			files = (
 				1820638321B7D79300BEEF8F /* LaunchScreen.storyboard in Resources */,
 				1820638021B7D79300BEEF8F /* Assets.xcassets in Resources */,
-				1820637E21B7D78C00BEEF8F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +428,7 @@
 				1820637B21B7D78C00BEEF8F /* ViewController.swift in Sources */,
 				182063AA21B7DF8400BEEF8F /* MatchResumeTableViewCell.swift in Sources */,
 				1820637921B7D78C00BEEF8F /* AppDelegate.swift in Sources */,
+				1875BACA21B8622600045BF8 /* ResumeViewController.swift in Sources */,
 				182063B321B7E7CA00BEEF8F /* MatchPlayerEvent.swift in Sources */,
 				182063B121B7E5C500BEEF8F /* Service.swift in Sources */,
 			);
@@ -466,14 +466,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1820637C21B7D78C00BEEF8F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1820637D21B7D78C00BEEF8F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1820638121B7D79300BEEF8F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

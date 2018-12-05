@@ -16,7 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+        
+        //testService()
+        
+        return testController()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -42,5 +45,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate {
+    
+    func testService() {
+        
+        Service.shared.getMatchResume(matchId: "2914") { (result , error) in
+            
+            if error == nil {
+                
+                print("Res: \(result)")
+            } else {
+                print("Error: \(error?.localizedDescription)")
+            }
+            
+        }
+        
+    }
+    
+    func testController() -> Bool{
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let controller = ResumeViewController.init(items: []
+            , identifier: "MatchResumeTableViewCell"
+            , configure: {_,_ in }
+            , selectHandler: {_ in}
+            , sectionTitle: nil)
+        
+        controller.matchId = "2914"
+        
+        let navigation = UINavigationController(rootViewController: controller)
+        
+        window?.rootViewController = navigation
+        
+        window?.makeKeyAndVisible()
+        
+        return true
+        
+    }
 }
 

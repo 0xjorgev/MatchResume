@@ -8,6 +8,29 @@
 
 import Foundation
 
+struct RequestResponse:Codable {
+    
+    let data:[MatchPlayerEvent]?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case data = "data"
+    }
+    
+}
+
+struct EventResume {
+    
+    let home:Int?
+    
+    let away:Int?
+    
+    let name:String?
+    
+    let logo:String?
+    
+}
+
 struct MatchPlayerEvent:Codable {
 
     let id: Int?
