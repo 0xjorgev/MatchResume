@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 class ResumeViewController:GenericUITableViewController<EventResume, MatchResumeTableViewCell>{
     
     var matchId:String?
+    
+    var headerData:TableViewHeaderView.HeaderData?
     
     override func getData() {
         
@@ -29,8 +32,22 @@ class ResumeViewController:GenericUITableViewController<EventResume, MatchResume
                 for tag in unique {
                     
                     let val:EventResume = self.dataProcess(x: tag)(arr)
+                    
                     self.items?.append(val)
                 }
+                
+                self.headerData = TableViewHeaderView.HeaderData.init(homeScore: arr.first?.matchID?.homeTeamScore
+                    , awayScore: arr.first?.matchID?.visitorTeamScore
+                    , homeName: arr.first?.matchID?.homeTeam?.name
+                    , awayName: arr.first?.matchID?.visitorTeam?.name
+                    , homeLogo: arr.first?.matchID?.homeTeam?.logoURL
+                    , awayLogo: arr.first?.matchID?.visitorTeam?.logoURL)
+                
+                OperationQueue.main.addOperation { self.customizeTableViewHeader() }
+                
+               // self.customizeTableViewHeader()
+
+                
                 
                 //self.items = response?.data
             } else {
@@ -39,6 +56,20 @@ class ResumeViewController:GenericUITableViewController<EventResume, MatchResume
             
         }
         
+        
+    }
+    
+    override func customizeTableViewHeader() {
+        
+        let head = TableViewHeaderView()
+
+        //head.createViews()
+        
+        head.headerData = self.headerData
+        
+        self.tableView.tableHeaderView = head
+
+        head.frame = CGRect(x: 0.0, y: 0.0, width: self.tableView.frame.width, height: 145.0)
     }
     
 }

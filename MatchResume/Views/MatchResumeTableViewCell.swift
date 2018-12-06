@@ -51,39 +51,33 @@ class MatchResumeTableViewCell:UITableViewCell {
         
         homeAmountLabel = UILabel()
         
-        homeAmountLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+        homeAmountLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
         
         homeAmountLabel.textAlignment = .center
         
         homeAmountLabel.textColor = .black
-        
-        homeAmountLabel.backgroundColor = .blue
         
         self.addSubview(homeAmountLabel)
         
         
         awayAmountLabel = UILabel()
         
-        awayAmountLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+        awayAmountLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
         
         awayAmountLabel.textAlignment = .center
         
         awayAmountLabel.textColor = .black
-        
-        awayAmountLabel.backgroundColor = .blue
         
         self.addSubview(awayAmountLabel)
         
         
         eventNameLabel = UILabel()
         
-        eventNameLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
+        eventNameLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
         
         eventNameLabel.textAlignment = .center
         
         eventNameLabel.textColor = .black
-        
-        eventNameLabel.backgroundColor = .blue
         
         self.addSubview(eventNameLabel)
         
@@ -100,14 +94,14 @@ class MatchResumeTableViewCell:UITableViewCell {
     
     func setupConstraints(){
         
-        homeAmountLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 32.0)
+        homeAmountLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 38.0)
         
         homeAmountLabel.autoPinEdge(.left, to: .left, of: self, withOffset: 8.0)
         
         homeAmountLabel.autoSetDimension(.width, toSize: 40.0)
         
         
-        awayAmountLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 32.0)
+        awayAmountLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 38.0)
         
         awayAmountLabel.autoPinEdge(.right, to: .right, of: self, withOffset: -8.0)
         

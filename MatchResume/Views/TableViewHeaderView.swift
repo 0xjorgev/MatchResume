@@ -1,5 +1,5 @@
 //
-//  TableViewHeader.swift
+//  TableViewHeaderView.swift
 //  MatchResume
 //
 //  Created by Jorge Mendoza on 12/5/18.
@@ -11,7 +11,8 @@ import UIKit
 import PureLayout
 import moa
 
-class TableViewHeader:UIView {
+class TableViewHeaderView:UIView {
+    
     
     var homeTeamScoreLabel:UILabel!
     
@@ -26,6 +27,7 @@ class TableViewHeader:UIView {
     var awayTeamLogo:UIImageView!
     
     var centralImage:UIImageView!
+    
     
     struct HeaderData {
         
@@ -57,7 +59,11 @@ class TableViewHeader:UIView {
             
             self.homeTeamLogo.moa.url = headerData?.homeLogo
             
+            self.homeTeamLogo.moa.onSuccess = {image in return image}
+            
             self.awayTeamLogo.moa.url = headerData?.awayLogo
+            
+            self.awayTeamLogo.moa.onSuccess = {image in return image}
         }
     }
     
@@ -72,7 +78,7 @@ class TableViewHeader:UIView {
         
         homeTeamScoreLabel.textColor = .black
         
-        self.addSubview(homeTeamNameLabel)
+        self.addSubview(homeTeamScoreLabel)
         
         
         awayTeamScoreLabel = UILabel()
@@ -145,52 +151,54 @@ class TableViewHeader:UIView {
         
         homeTeamScoreLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 16.0)
         
-        homeTeamScoreLabel.autoPinEdge(.left, to: .left, of: self, withOffset: 8.0)
+        homeTeamScoreLabel.autoPinEdge(.left, to: .left, of: self, withOffset: 48.0)
         
         homeTeamScoreLabel.autoSetDimensions(to: scoreSize)
         
         
-        homeTeamLogo.autoPinEdge(.top, to: .top, of: homeTeamScoreLabel, withOffset: 8.0)
+        homeTeamLogo.autoPinEdge(.top, to: .bottom, of: homeTeamScoreLabel, withOffset: 8.0)
         
-        homeTeamLogo.autoPinEdge(.left, to: .left, of: self, withOffset: 16.0)
+        homeTeamLogo.autoPinEdge(.left, to: .left, of: self, withOffset: 32.0)
         
         homeTeamLogo.autoSetDimensions(to: badgeSize)
         
         
-        homeTeamNameLabel.autoPinEdge(.top, to: .top, of: homeTeamLogo, withOffset: 8.0)
+        homeTeamNameLabel.autoPinEdge(.top, to: .bottom, of: homeTeamLogo, withOffset: 8.0)
         
-        homeTeamNameLabel.autoPinEdge(.left, to: .left, of: self, withOffset: 8.0)
+        homeTeamNameLabel.autoPinEdge(.left, to: .left, of: self, withOffset: 16.0)
         
         homeTeamNameLabel.autoSetDimension(.width, toSize: 120.0)
         
+        
+        
+        awayTeamScoreLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 16.0)
+        
+        awayTeamScoreLabel.autoPinEdge(.right, to: .right, of: self, withOffset: -48.0)
+        
+        awayTeamScoreLabel.autoSetDimensions(to: scoreSize)
+        
+        
+        awayTeamLogo.autoPinEdge(.top, to: .bottom, of: awayTeamScoreLabel, withOffset: 8.0)
+        
+        awayTeamLogo.autoPinEdge(.right, to: .right, of: self, withOffset: -32.0)
+        
+        awayTeamLogo.autoSetDimensions(to: badgeSize)
+        
+        
+        awayTeamNameLabel.autoPinEdge(.top, to: .bottom, of: awayTeamLogo, withOffset: 8.0)
+        
+        awayTeamNameLabel.autoPinEdge(.right, to: .right, of: self, withOffset: -8.0)
+        
+        awayTeamNameLabel.autoSetDimension(.width, toSize: 120.0)
         
         
         centralImage.autoPinEdge(.top, to: .top, of: self, withOffset: 24.0)
         
         centralImage.autoPinEdge(.left, to: .right, of: homeTeamLogo, withOffset: 24.0)
         
+        centralImage.autoPinEdge(.right, to: .left, of: awayTeamLogo, withOffset: -24.0)
+        
         centralImage.autoSetDimensions(to: badgeSize)
-        
-        
-        awayTeamScoreLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 16.0)
-        
-        awayTeamScoreLabel.autoPinEdge(.right, to: .left, of: self, withOffset: 8.0)
-        
-        awayTeamScoreLabel.autoSetDimensions(to: scoreSize)
-        
-        
-        awayTeamLogo.autoPinEdge(.top, to: .top, of: awayTeamScoreLabel, withOffset: 8.0)
-        
-        awayTeamLogo.autoPinEdge(.left, to: .left, of: self, withOffset: 16.0)
-        
-        awayTeamLogo.autoSetDimensions(to: badgeSize)
-        
-        
-        awayTeamNameLabel.autoPinEdge(.top, to: .top, of: awayTeamLogo, withOffset: 8.0)
-        
-        awayTeamNameLabel.autoPinEdge(.left, to: .left, of: self, withOffset: 8.0)
-        
-        awayTeamNameLabel.autoSetDimension(.width, toSize: 120.0)
     }
     
     override init(frame: CGRect) {
