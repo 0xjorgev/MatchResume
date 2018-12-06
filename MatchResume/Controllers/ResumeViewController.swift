@@ -12,8 +12,6 @@ class ResumeViewController:GenericUITableViewController<EventResume, MatchResume
     
     var matchId:String?
     
-    let tags = ["#GOL", "#REDCARD", "#YELLOWCARD", "#AGOL", "#CHANGE"]
-    
     override func getData() {
         
         guard let id = self.matchId else { return }
@@ -22,19 +20,21 @@ class ResumeViewController:GenericUITableViewController<EventResume, MatchResume
             
             if error == nil {
                 
-                print("Response Result: \(response)")
+                let arr = response?.data ?? []
                 
-                let arr = response?.data
+                let unique = Set(arr
+                    .filter{ $0.eventID?.code == "#GOL" || $0.eventID?.code == "#REDCARD" || $0.eventID?.code == "#YELLOWCARD" || $0.eventID?.code == "#AGOL" || $0.eventID?.code == "#CHANGE" }
+                    .map{ return $0.eventID?.code ?? "" })
                 
-                for tag in self.tags {
+                for tag in unique {
                     
-                    let val:EventResume = self.dataProcess(x: tag)(arr ?? [])
+                    let val:EventResume = self.dataProcess(x: tag)(arr)
                     self.items?.append(val)
                 }
                 
                 //self.items = response?.data
             } else {
-                print("Error: \(error?.localizedDescription)")
+                print("Error: \(String(describing: error?.localizedDescription))")
             }
             
         }
@@ -46,18 +46,19 @@ class ResumeViewController:GenericUITableViewController<EventResume, MatchResume
 extension ResumeViewController {
     
     func dataProcess(x: String) -> ([MatchPlayerEvent]) -> EventResume {
+        
         return { xs in
             
             let homeId = xs.first?.matchID?.homeTeamID
             
             let awayId = xs.first?.matchID?.visitorTeamID
             
-            let name = xs.first?.event?.name
-            
-            let url = xs.first?.event?.imgURL
-            
             //Filtered by event Tag
             let arr = xs.filter{ $0.event?.code == x }
+            
+            let name = arr.first?.event?.name
+            
+            let url = arr.first?.event?.imgURL
             
             let home = self.processEventTeam(x: homeId ?? 0)(arr)
             
@@ -69,7 +70,6 @@ extension ResumeViewController {
     
     func processEventTeam(x:Int) -> ([MatchPlayerEvent]) -> Int? {
         return { xs in
-            //Filtered by event Team
             return xs.filter{ $0.teamID == x }.map{ ($0.event?.incrementsBy ?? 0) * 1 }.reduce(0, +)
             
         }

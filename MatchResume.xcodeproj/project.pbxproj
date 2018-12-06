@@ -18,7 +18,7 @@
 		182063AF21B7E50F00BEEF8F /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182063AE21B7E50F00BEEF8F /* GenericTableViewController.swift */; };
 		182063B121B7E5C500BEEF8F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182063B021B7E5C500BEEF8F /* Service.swift */; };
 		182063B321B7E7CA00BEEF8F /* MatchPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182063B221B7E7CA00BEEF8F /* MatchPlayerEvent.swift */; };
-		1875BACA21B8622600045BF8 /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BAC921B8622600045BF8 /* ResumeViewController.swift */; };
+		182063B521B8A09000BEEF8F /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182063B421B8A08A00BEEF8F /* ResumeViewController.swift */; };
 		2108FFC685D98A50D777B381 /* Pods_MatchResumeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153BD33F7E1F5CF104C786E3 /* Pods_MatchResumeUITests.framework */; };
 		2ED85669589EB6A3EEF219EB /* Pods_MatchResumeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB9594940B72476AA62E944 /* Pods_MatchResumeTests.framework */; };
 		F988C3EB8D0CFE60E79F557B /* Pods_MatchResume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0BA8E81ED23AE5E52284FA /* Pods_MatchResume.framework */; };
@@ -60,7 +60,7 @@
 		182063AE21B7E50F00BEEF8F /* GenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
 		182063B021B7E5C500BEEF8F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		182063B221B7E7CA00BEEF8F /* MatchPlayerEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPlayerEvent.swift; sourceTree = "<group>"; };
-		1875BAC921B8622600045BF8 /* ResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
+		182063B421B8A08A00BEEF8F /* ResumeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
 		76B0EDAF3A181D836DD6D94D /* Pods-MatchResume.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchResume.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatchResume/Pods-MatchResume.release.xcconfig"; sourceTree = "<group>"; };
 		7B3F28CC1F045BB68898AC92 /* Pods-MatchResume.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchResume.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MatchResume/Pods-MatchResume.debug.xcconfig"; sourceTree = "<group>"; };
 		7FB9594940B72476AA62E944 /* Pods_MatchResumeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchResumeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,8 +175,8 @@
 		182063AC21B7E37F00BEEF8F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				182063B421B8A08A00BEEF8F /* ResumeViewController.swift */,
 				182063AE21B7E50F00BEEF8F /* GenericTableViewController.swift */,
-				1875BAC921B8622600045BF8 /* ResumeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -428,7 +428,7 @@
 				1820637B21B7D78C00BEEF8F /* ViewController.swift in Sources */,
 				182063AA21B7DF8400BEEF8F /* MatchResumeTableViewCell.swift in Sources */,
 				1820637921B7D78C00BEEF8F /* AppDelegate.swift in Sources */,
-				1875BACA21B8622600045BF8 /* ResumeViewController.swift in Sources */,
+				182063B521B8A09000BEEF8F /* ResumeViewController.swift in Sources */,
 				182063B321B7E7CA00BEEF8F /* MatchPlayerEvent.swift in Sources */,
 				182063B121B7E5C500BEEF8F /* Service.swift in Sources */,
 			);

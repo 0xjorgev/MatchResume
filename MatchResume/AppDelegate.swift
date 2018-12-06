@@ -70,7 +70,13 @@ extension AppDelegate {
         
         let controller = ResumeViewController.init(items: []
             , identifier: "MatchResumeTableViewCell"
-            , configure: {_,_ in }
+            , configure: {cell,item in
+                
+                    cell.cellData = MatchResumeTableViewCell.CellData.init(homeCount: item?.home
+                        , awayCount: item?.away
+                        , eventName: item?.name
+                        , eventLogo: item?.logo)
+            }
             , selectHandler: {_ in}
             , sectionTitle: nil)
         

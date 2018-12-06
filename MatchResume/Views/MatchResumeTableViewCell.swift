@@ -41,6 +41,8 @@ class MatchResumeTableViewCell:UITableViewCell {
             eventNameLabel.text = cellData?.eventName ?? ""
             
             eventLogo.moa.url = cellData?.eventLogo
+            
+            eventLogo.moa.onSuccess = {image in return image}
         }
         
     }
@@ -55,6 +57,8 @@ class MatchResumeTableViewCell:UITableViewCell {
         
         homeAmountLabel.textColor = .black
         
+        homeAmountLabel.backgroundColor = .blue
+        
         self.addSubview(homeAmountLabel)
         
         
@@ -66,6 +70,8 @@ class MatchResumeTableViewCell:UITableViewCell {
         
         awayAmountLabel.textColor = .black
         
+        awayAmountLabel.backgroundColor = .blue
+        
         self.addSubview(awayAmountLabel)
         
         
@@ -76,6 +82,8 @@ class MatchResumeTableViewCell:UITableViewCell {
         eventNameLabel.textAlignment = .center
         
         eventNameLabel.textColor = .black
+        
+        eventNameLabel.backgroundColor = .blue
         
         self.addSubview(eventNameLabel)
         
@@ -92,27 +100,27 @@ class MatchResumeTableViewCell:UITableViewCell {
     
     func setupConstraints(){
         
-        homeAmountLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 16.0)
+        homeAmountLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 32.0)
         
         homeAmountLabel.autoPinEdge(.left, to: .left, of: self, withOffset: 8.0)
         
-        homeAmountLabel.autoSetDimension(.width, toSize: 80.0)
+        homeAmountLabel.autoSetDimension(.width, toSize: 40.0)
         
         
-        awayAmountLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 16.0)
+        awayAmountLabel.autoPinEdge(.top, to: .top, of: self, withOffset: 32.0)
         
-        awayAmountLabel.autoPinEdge(.right, to: .right, of: self, withOffset: 8.0)
+        awayAmountLabel.autoPinEdge(.right, to: .right, of: self, withOffset: -8.0)
         
-        awayAmountLabel.autoSetDimension(.width, toSize: 80.0)
+        awayAmountLabel.autoSetDimension(.width, toSize: 40.0)
         
         
         eventLogo.autoPinEdge(.top, to: .top, of: self, withOffset: 8.0)
         
         eventLogo.autoPinEdge(.left, to: .right, of: homeAmountLabel, withOffset: 8.0)
         
-        eventLogo.autoPinEdge(.right, to: .right, of: awayAmountLabel, withOffset: 8.0)
+        eventLogo.autoPinEdge(.right, to: .left, of: awayAmountLabel, withOffset: -8.0)
         
-        awayAmountLabel.autoSetDimension(.height, toSize: 60.0)
+        eventLogo.autoSetDimension(.height, toSize: 40.0)
         
         
         eventNameLabel.autoPinEdge(.top, to: .bottom, of: eventLogo, withOffset: 5.0)
@@ -121,7 +129,7 @@ class MatchResumeTableViewCell:UITableViewCell {
         
         eventNameLabel.autoPinEdge(.right, to: .right, of: self, withOffset: -95.0)
         
-        eventNameLabel.autoPinEdge(.bottom, to: .bottom, of: self, withOffset: -15.0)
+        eventNameLabel.autoSetDimension(.height, toSize: 40.0)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
